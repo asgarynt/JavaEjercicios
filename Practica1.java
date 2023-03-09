@@ -133,11 +133,11 @@ public class Practica {
 		System.out.println(numMax);
 
         // 4. Obtener el promedio de (x) y (y)
-		int avg = (x + y) / 2;
+		double avg = (double)(x + y) / 2;
 		System.out.println(avg);
 
 
-        // EJERCICIOS 2
+        // EJERCICIOS 2 SECCIÓN
 
 		// 1. Escribir un metodo para encontrar el area de un triangulo a partir de 3
 		// lados ingresados
