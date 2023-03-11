@@ -99,6 +99,47 @@ public class Practica {
 		}
 	}
 
+	static void primeNumbers() {
+		System.out.println("\nEjercicio 9: Mostrar en pantalla los primeros 100 numeros primos");
+		int primeNum = 2;
+		for (int i = 0; i < 100; i++) {
+			if (primeNum % 2 == 0) {
+				System.out.print(primeNum + " ");
+				primeNum += 2;
+			}
+		}
+	}
+
+	static int sumTwoNumbers() {
+
+		System.out.println("\n\nEjercicio 10: Sumar dos numeros sin usar operadores aritmeticos");
+		System.out.println("Ingresa el primer número");
+		int a = s.nextInt();
+		System.out.println("Ingresa el segundo número");
+		int b = s.nextInt();
+		return Integer.sum(a, b);
+	}
+
+	static String removeSpace(String n) {
+		System.out.println("\nEjercicio 13: Remover espacios");
+		return n.replaceAll("\\s", "");
+	}
+
+	static String invertString(String text) {
+		System.out.println("\n\nEjercicio 14: Revertir un String");
+		return new StringBuilder(text).reverse().toString();
+	}
+
+	static int factorialNum(int n) {
+		if (n == 0) {
+			return 1;
+		} else {
+			return n * factorialNum(n - 1);
+		}
+	}
+	
+	
+
 	public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -137,7 +178,7 @@ public class Practica {
 		System.out.println(avg);
 
 
-        // EJERCICIOS 2 SECCIÓN
+        // EJERCICIOS 2 SECCION
 
 		// 1. Escribir un metodo para encontrar el area de un triangulo a partir de 3
 		// lados ingresados
@@ -171,6 +212,37 @@ public class Practica {
 		// 8 Escribir un metodo para descubrir si un año ingresado es bisiesto o no
 		System.out.println(leapYear());
 
+
+        // EJERCICIOS 3 SECCION
+
+		// 9. Escribir mostrar en pantalla los primeros 100 numeros primos
+		primeNumbers();
+
+//		// 10. Escribir un programa para sumar 2 numeros sin usar operadores aritmeticos
+//		System.out.println(sumTwoNumbers());
+//		
+		// 11. Escribir un método para verificar si un numero positivo de 2 digitos es
+		// palindromo
+
+//		// 12. Sin usar loops, escribir un metodo para sumar todos los digitos de un
+//		// numero donde 99 >= n >= 10
+
+		
+		// 13. Escribir un método para remover espacios en blanco de un String. ej ->
+		// "Hola Mundo" -> "HolaMundo"
+		System.out.println("\n"+ removeSpace("Hola mundo"));
+
+		
+		// 14. Escribir un método para invertir un String. ej -> "Hola" -> "aloH" ---
+		// Sin usar loops
+		System.out.println(invertString("hola"));
+
+		// 15. Escribir un metodo para encontrar el factorial de un numero sin loops
+		System.out.println("\n\nEjercicio 15: Factorial de un numero sin loops");
+		System.out.println(factorialNum(6));	
+		
+
+		
 	}
 
 }
