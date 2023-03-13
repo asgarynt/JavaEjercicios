@@ -110,14 +110,29 @@ public class Practica {
 		}
 	}
 
-	static int sumTwoNumbers() {
+	static int sumTwoNumbers(int numA, int numB) {
+		while (numB != 0) {
+			int sumaSinAcarreo = numA ^ numB;
+			int acarreo = (numA & numB) << 1;
+			numA = sumaSinAcarreo;
+			numB = acarreo;
+		}
+		return numA;
+	}
 
-		System.out.println("\n\nEjercicio 10: Sumar dos numeros sin usar operadores aritmeticos");
-		System.out.println("Ingresa el primer número");
-		int a = s.nextInt();
-		System.out.println("Ingresa el segundo número");
-		int b = s.nextInt();
-		return Integer.sum(a, b);
+	static boolean palindromeNumber(int num) {
+		int num1 = num / 10;
+		int num2 = num % 10;
+		return num1 == num2;
+	}
+
+	static String sumDigits(int num) {
+		if (99 >= num && num >= 10) {
+			int num1 = num / 10;
+			int num2 = num % 10;
+			return "La suma de ambos digitos es: " + (num1 + num2);
+		}
+		return "No es un número que cumpla las condiciones";
 	}
 
 	static String removeSpace(String n) {
@@ -137,25 +152,22 @@ public class Practica {
 			return n * factorialNum(n - 1);
 		}
 	}
-	
-	
 
 	public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-		
-     
-        // EJERCICIOS 1 SECCIÓN
-        
-      	// Pedir 2 numeros (x), (y)
+		Scanner scanner = new Scanner(System.in);
+
+		// EJERCICIOS 1 SECCIÓN
+
+		// Pedir 2 numeros (x), (y)
 		// Enteros
 		System.out.println("Escribe dos numeros enteros");
 		int x = scanner.nextInt();
 		int y = scanner.nextInt();
 		System.out.println(x);
 		System.out.println(y);
-		
-        // 1. Convertir a double cada numero
+
+		// 1. Convertir a double cada numero
 		double doubleX = (double) x;
 		double doubleY = (double) y;
 		System.out.println(doubleX);
@@ -173,12 +185,11 @@ public class Practica {
 		int numMax = Math.max(x, y);
 		System.out.println(numMax);
 
-        // 4. Obtener el promedio de (x) y (y)
-		double avg = (double)(x + y) / 2;
+		// 4. Obtener el promedio de (x) y (y)
+		double avg = (double) (x + y) / 2;
 		System.out.println(avg);
 
-
-        // EJERCICIOS 2 SECCION
+		// EJERCICIOS 2 SECCION
 
 		// 1. Escribir un metodo para encontrar el area de un triangulo a partir de 3
 		// lados ingresados
@@ -212,37 +223,37 @@ public class Practica {
 		// 8 Escribir un metodo para descubrir si un año ingresado es bisiesto o no
 		System.out.println(leapYear());
 
-
-        // EJERCICIOS 3 SECCION
+		// EJERCICIOS 3 SECCION
 
 		// 9. Escribir mostrar en pantalla los primeros 100 numeros primos
 		primeNumbers();
 
-//		// 10. Escribir un programa para sumar 2 numeros sin usar operadores aritmeticos
-//		System.out.println(sumTwoNumbers());
-//		
+		// 10. Escribir un programa para sumar 2 numeros sin usar operadores aritmeticos
+		System.out.println("\n\nEjercicio 10: Sumar dos numeros sin operador aritmetico");
+		System.out.println(sumTwoNumbers(10, 8));
+
 		// 11. Escribir un método para verificar si un numero positivo de 2 digitos es
 		// palindromo
+		System.out.println("\n\nEjercicio 11: Verificar si un numero positivo de 2 digitos es palindromo");
+		System.out.println(palindromeNumber(11));
 
-//		// 12. Sin usar loops, escribir un metodo para sumar todos los digitos de un
-//		// numero donde 99 >= n >= 10
+		// 12. Sin usar loops, escribir un metodo para sumar todos los digitos de un
+		// numero donde 99 >= n >= 10
+		System.out.println("\n\nEjercicio 12: Escribir un metodo para sumar los digitos de un número");
+		System.out.println(sumDigits(82));
 
-		
 		// 13. Escribir un método para remover espacios en blanco de un String. ej ->
 		// "Hola Mundo" -> "HolaMundo"
-		System.out.println("\n"+ removeSpace("Hola mundo"));
+		System.out.println("\n" + removeSpace("Hola mundo"));
 
-		
 		// 14. Escribir un método para invertir un String. ej -> "Hola" -> "aloH" ---
 		// Sin usar loops
 		System.out.println(invertString("hola"));
 
 		// 15. Escribir un metodo para encontrar el factorial de un numero sin loops
 		System.out.println("\n\nEjercicio 15: Factorial de un numero sin loops");
-		System.out.println(factorialNum(6));	
-		
+		System.out.println(factorialNum(6));
 
-		
 	}
 
 }
